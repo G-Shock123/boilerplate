@@ -1,9 +1,15 @@
 import React from 'react'
-
+import ReportSummary from './ReportSummary'
+import ReportList from './ReportList'
+import RepeatOffenderPage from './RepeatOffenderPage'
 
 const DashboardPage = () => (
     <div>
-       Dashboard Page Content
+       
+       <ReportSummary />
+       <ReportList />
+       <RepeatOffenderPage />
+      
         
         
     </div>

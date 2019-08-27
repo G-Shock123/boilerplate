@@ -11,7 +11,7 @@ export const Header = ({startLogOut}) => (
        
       
         <Link className="header__title" to="/dashboard" > 
-            <h1>Boilerplate</h1>
+            <h1>Hotline</h1>
         </Link> 
        
         <button className="button button--link"onClick={startLogOut}>Logout</button>

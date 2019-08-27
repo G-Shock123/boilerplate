@@ -4,7 +4,7 @@ import{Provider} from 'react-redux'
 
 
 import AppRouter,{history} from './routers/AppRouter'
-
+import {startSetReports} from './actions/reports'
 import configureStore from './store/configureStore'
 
 import {logIn, logOut} from './actions/auth'
@@ -18,20 +18,7 @@ import LoadingPage from './components/LoadingPage'
 
 
 
-//browser router creates the new router. Only used oncce
-
 const store = configureStore()
-
-
-
-
-    
-
-
-
-
-
-
 
 const jsx = (
     <Provider store={store}>
@@ -54,8 +41,14 @@ firebase.auth().onAuthStateChanged((user)=>{
     if(user){
             console.log(user.uid);
             store.dispatch(logIn(user.uid))
+            store.dispatch(startSetReports()).then(()=>{
+                renderApp()
+               
+                
+
+            })
             
-            renderApp()
+           
         if (history.location.pathname === '/') {
             history.push('/dashboard')
         }
